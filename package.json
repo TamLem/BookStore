@@ -1,0 +1,23 @@
+{
+  "name": "bookstore",
+  "version": "0.1.0",
+  "description": "BookStore Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "Boookstore"
+  ],
+  "author": "Tamirat Lemma <tamworku1@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "ejs-lint": "^1.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

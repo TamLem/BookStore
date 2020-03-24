@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type='text/css' href="../main.css">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Addis Book Store</h1>
+            <p id="quote">The reading of all good books is like conversation with the finest (people) of the past centuries.” – Descartes</p>
+
+        </div>
+        
+        <div class="nav">
+            <ul>
+                <li id=""><a href="">Home</a></li>
+                <li id=""><a href="">Catalogue</a></li>
+                <li id=""><a href="">Reviews</a></li>
+                <li id=""><a href="">About</a></li>
+                <li id=""><a href="">Contact</a></li>
+                <li id=""><a href="admin.html">Admin Page</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="book-list">
+
+                <div class="book-container">
+                        <h3 class= book-title> <%= bookTitle %> <span>(<%= bookYear %>)</span></h1>
+                        <h3 class="author">Author</h1>
+                        <img class="book-cover" src="https://www.penguin.co.uk/content/dam/prh/books/564/56486/9780141036137.jpg.transform/PRHDesktopWide_small/image.jpg">
+                        <span class='price'>Price</span>
+                        <button>Add to Cart</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="aside-left">
+
+        </div>
+        
+        <div class="footer">
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="../main.js"></script>
+</body>
+</html>

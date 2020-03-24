@@ -1,0 +1,96 @@
+body {
+    background-color: #F8F8F8;
+}
+
+.container {
+    width: 70%;
+    margin-left: autO;
+    margin-right:auto;
+    
+}
+
+.header {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #427d78;
+    color: white;
+    font-family: 'Gentium Book Basic', serif;
+    text-align: center;
+    
+}
+#quote {
+    color:#D5D36A;
+}
+.nav {
+    background-color: #233541;
+    overflow: hidden;
+    margin: 0px;
+    padding-bottom: px;
+}
+
+.nav ul {
+    
+    list-style-type: none;
+    overflow: hidden;
+    min-width: 60%;
+    float: center;
+}
+
+.nav ul li {
+    float: left;
+    padding-left: 5%;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.main {
+    margin-top: 20px;
+    border-style: solid;
+    border-color:steelblue;
+    height: auto;
+    overflow: hidden;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 40px;
+    min-height: 700px;
+    margin: 30px;
+    
+}
+
+.book-container {
+    max-width: 300px;
+    max-height: 650px;
+    border: solid 0.1px gray;
+    margin: 10px;
+    border-style: solid;
+    border-color:steelblue;
+    overflow: hidden;    
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.book-cover {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: block;
+    margin: 5px;
+    margin: 20px;
+}
+
+.author, .book-title {
+    margin: 5;
+    margin-top: 0;
+}
