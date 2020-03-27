@@ -16,5 +16,5 @@ Todos
 
 
 ToFixs
-    - on updating from Admin page it doesnt automatically update
-        - problem seems to the server is still reading the old file
+    Fixed - on updating from Admin page it doesnt automatically update
+    Fixed - problem seems to the server is still reading the old file

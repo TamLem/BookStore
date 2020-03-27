@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="../main.css">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+
+        <%- include('../includes/header') %>
+        
+        <div class="nav">
+            <ul>
+                <li id=""><a href="/">Store</a></li>
+                <li id=""><a href="">Dashboard</a></li>
+                <li id=""><a href="">Orders</a></li>
+                <li id=""><a href="">Accounting</a></li>
+                <li id=""><a href="/admin/add-product">Admin Page</a></li>
+            </ul>
+        </div>
+       
+        <div class="main">
+
+            <div class="new-book-div">
+                <h3 class="center center-text">Add new book</h3>
+                <div class="form-wrapper">
+                    <form id="new-book-form" class="center" action="/admin/savebook" method="POST">
+                        <div class="input-field">
+                            <p class="input-label">Title</p>
+                           <input type="text" id="book_title" name="BookTitle">
+                        </div>
+                        <div class="input-field">
+                            <p class="input-label">Author</p>
+                            <input type="text" id="Author" name="Author">
+                        </div>
+                        <div class="input-field">
+                            <p class="input-label">Year</p>
+                            <input type="text" id="Year" name="Year">
+                        </div class="input-field">
+                        <div class="input-field">
+                            <p class="input-label">Caption</p>
+                            <input type="text" id="Caption" name="Caption">
+                        </div class="input-field">
+                        <div class="input-field">
+                            <p class="input-label">Price</p>
+                            <input type="text" id="Price" name="Price">
+                        </div class="input-field">
+                        <div class="input-field">
+                            <p class="input-label">Cover Image</p>
+                            <input type="text" id="Price" name="Cover">
+                        </div class="input-field">
+                        <button id="register_book_button" class="btn center" type="submit" >Register</button>
+                    </form>
+                </div>
+            </div>
+
+            
+            <div class="book-list">
+                <% booksData.forEach(element => { %>
+                    <div class="book-container">
+                        <div class="cover-wrapper">
+                            <img class="book-cover" src = <%= element.img %> </img>
+                        </div>
+                        <p class= book-title> <%= element.title %> <span>(<%= element.year %>)</span></p>
+                        <p class="author"><%= element.author %></p>
+                        <span class='price'><%= element.price %></span>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <% }) %>
+                </div>
+                
+        </div>
+                
+
+
+    <script src="../main.js"></script>
+</body>
+</html>

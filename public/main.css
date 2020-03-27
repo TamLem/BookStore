@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playfair+Display&display=swap');
+
 body {
-    background-color: #F8F8F8;
+    background-color: #F8F8F8; 
 }
 
 .container {
     width: 70%;
     margin-left: autO;
     margin-right:auto;
+    background-color: rgb(238, 232, 232);
     
 }
 
@@ -49,8 +52,6 @@ body {
 
 .main {
     margin-top: 20px;
-    border-style: solid;
-    border-color:steelblue;
     height: auto;
     overflow: hidden;
 }
@@ -61,36 +62,70 @@ body {
     margin-left: 40px;
     min-height: 700px;
     margin: 30px;
+    border-top: gray 1px solid;
+    padding-top: 40px;
+    margin-top: 40px;
     
 }
 
 .book-container {
-    max-width: 300px;
-    max-height: 650px;
-    border: solid 0.1px gray;
-    margin: 10px;
-    border-style: solid;
-    border-color:steelblue;
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
     overflow: hidden;    
     justify-content: center;
     text-align: center;
-    padding: 10px;
+    padding: 0px;
+}
+.cover-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 240px;
+    max-width: 156px;
+    margin-bottom: 10px;
 }
 
 .book-cover {
     display: block;
-    max-height: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
+    max-height: 240px;
+    object-fit: fit;
 }
 
 .price {
     display: block;
     margin: 5px;
-    margin: 20px;
+    margin: 10px;
+    font-style: italic;
 }
 
-.author, .book-title {
+.book-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.7em;
+    margin: 5;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.author {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.6em;
+    font-weight: 500;
     margin: 5;
     margin-top: 0;
 }
+
+.btn {
+    font: inherit;
+    border: 1px solid #00695c;
+    color: #00695c;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+.btn:hover,
+.btn:active {
+    background-color: #00695c;
+    color: white;
+}
+  

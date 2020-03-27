@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "year": "1990",
+        "caption": "Political Satire",
+        "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRchzrNPIyGLNvbRNX4l-67GtckOw_6tJK-soAcqxbzdVfbTAK4",
+        "price": "$20"
+    },
+    {
+        "title": "The Subtlea art of not giving a fuck",
+        "author": "Mark Manson",
+        "year": "2016",
+        "caption": "",
+        "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRchzrNPIyGLNvbRNX4l-67GtckOw_6tJK-soAcqxbzdVfbTAK4",
+        "price": "$30"
+    },
+    {
+        "title": "The Subtlea art of not giving a fuck",
+        "author": "Mark Manson",
+        "year": "2016",
+        "caption": "",
+        "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRchzrNPIyGLNvbRNX4l-67GtckOw_6tJK-soAcqxbzdVfbTAK4",
+        "price": "$30"
+    },
+    {
+        "title": "The Subtlea art of not giving a fuck",
+        "author": "Mark Manson",
+        "year": "2016",
+        "caption": "",
+        "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRchzrNPIyGLNvbRNX4l-67GtckOw_6tJK-soAcqxbzdVfbTAK4",
+        "price": "$30"
+    },
+    {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "year": "1990",
+        "caption": "Self-development",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/91H4dBqesCL.jpg",
+        "price": "$20"
+    },
+    {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "year": "1990",
+        "caption": "Self-development",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/91H4dBqesCL.jpg",
+        "price": "$20"
+    },
+    {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "year": "1990",
+        "caption": "Self-development",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/91H4dBqesCL.jpg",
+        "price": "$20"
+    },
+    {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "year": "1990",
+        "caption": "Self-development",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/91H4dBqesCL.jpg",
+        "price": "$20"
+    },
+    {
+        "title": "The Republic",
+        "author": "Plato",
+        "year": "375 BC",
+        "caption": "Philosophy",
+        "img": "https://prodimage.images-bn.com/pimages/9781387815333_p0_v2_s550x406.jpg",
+        "price": "50"
+    }
+]

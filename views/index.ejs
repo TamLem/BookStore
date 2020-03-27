@@ -16,9 +16,9 @@
         <div class="nav">
             <ul>
                 <li id=""><a href="">Home</a></li>
-                <li id=""><a href="">Catalogue</a></li>
-                <li id=""><a href="">Reviews</a></li>
-                <li id=""><a href="">About</a></li>
+                <li id=""><a href="">Books</a></li>
+                <li id=""><a href="">Cart</a></li>
+                <li id=""><a href="">About Us</a></li>
                 <li id=""><a href="">Contact</a></li>
                 <li id=""><a href="/admin/add-product">Admin Page</a></li>
             </ul>
@@ -27,11 +27,13 @@
             <div class="book-list">
                 <% booksData.forEach(element => { %>
                     <div class="book-container">
-                            <h3 class= book-title> <%= element.BookTitle %> <span>(<%= element.Year %>)</span></h1>
-                            <h3 class="author"><%= element.Author %></h1>
-                            <img class="book-cover" src = <%= element.Cover %> >
-                            <span class='price'><%= element.Price %></span>
-                            <button>Add to Cart</button>
+                            <div class="cover-wrapper">
+                                <img class="book-cover" src = <%= element.img %> </img>
+                            </div>
+                            <p class= book-title> <%= element.title %> <span>(<%= element.year %>)</span></p>
+                            <p class="author"><%= element.author %></p>
+                            <span class='price'><%= element.price %></span>
+                            <button class="btn">Add to Cart</button>
                     </div>
                 <% }) %>
             </div>
