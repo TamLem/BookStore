@@ -80,12 +80,13 @@ body {
 }
 
 
-input {
+input, textarea {
     margin:10px;
     margin-top: 0.5px;
     min-width: 60%;
-    height: 2em;
+    min-height: 2em;
     border-radius: 6px;
+    resize: none;
 }
 
 .input-label {
@@ -96,7 +97,8 @@ input {
 }
 
 #register_book_button {
-   
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .center {
@@ -108,4 +110,81 @@ input {
 .center-text {
     text-align: center;
 }
+
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 40px;
+    min-height: 700px;
+    margin: 30px;
+    border-top: gray 1px solid;
+    padding-top: 40px;
+    margin-top: 40px;
+    
+}
+
+.book-container {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: hidden;    
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+}
+.cover-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 240px;
+    max-width: 156px;
+    margin-bottom: 10px;
+}
+
+.book-cover {
+    display: block;
+    max-height: 240px;
+    object-fit: fit;
+}
+
+.price {
+    display: block;
+    margin: 5px;
+    margin: 10px;
+    font-style: italic;
+}
+
+.book-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.7em;
+    margin: 5;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.author {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.7em;
+    font-weight: 500;
+    margin: 5;
+    margin-top: 0;
+}
+
+.btn {
+    font: inherit;
+    border: 1px solid #00695c;
+    color: #00695c;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+.btn:hover,
+.btn:active {
+    background-color: #00695c;
+    color: white;
+}
+  
 

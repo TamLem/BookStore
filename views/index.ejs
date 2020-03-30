@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" type='text/css' href="../main.css">
     <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
 
@@ -15,25 +15,31 @@
         
         <div class="nav">
             <ul>
-                <li id=""><a href="">Home</a></li>
+                <li id=""><a href="/">Home</a></li>
                 <li id=""><a href="">Books</a></li>
-                <li id=""><a href="">Cart</a></li>
+                <li id=""><a href="/cart">Cart</a></li>
                 <li id=""><a href="">About Us</a></li>
                 <li id=""><a href="">Contact</a></li>
-                <li id=""><a href="/admin/add-product">Admin Page</a></li>
+                <li id=""><a href="/admin/add-product/0">Admin Page</a></li>
             </ul>
         </div>
+
         <div class="main">
             <div class="book-list">
                 <% booksData.forEach(element => { %>
                     <div class="book-container">
                             <div class="cover-wrapper">
-                                <img class="book-cover" src = <%= element.img %> </img>
+                                <a href="/products/<%= element.id %>">
+                                    <img class="book-cover" src = <%= element.img %> />
+                                </a>
                             </div>
                             <p class= book-title> <%= element.title %> <span>(<%= element.year %>)</span></p>
                             <p class="author"><%= element.author %></p>
-                            <span class='price'><%= element.price %></span>
-                            <button class="btn">Add to Cart</button>
+                            <span class='price'>$<%= element.price %></span>
+                            <form action="/cart/<%= element.id %>" method="POST">
+                                <!-- <input type="hidden" name="id" value="<%= element.id %>"> -->
+                                <button class="btn" type="submit">Add to Cart</button>
+                            </form>
                     </div>
                 <% }) %>
             </div>

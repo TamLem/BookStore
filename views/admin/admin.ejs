@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../admin.css">
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="/admin.css">
     <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
 
 </head>
@@ -20,39 +19,39 @@
                 <li id=""><a href="">Dashboard</a></li>
                 <li id=""><a href="">Orders</a></li>
                 <li id=""><a href="">Accounting</a></li>
-                <li id=""><a href="/admin/add-product">Admin Page</a></li>
+                <li id=""><a href="/admin/add-product/0">Admin Page</a></li>
             </ul>
         </div>
        
         <div class="main">
 
             <div class="new-book-div">
-                <h3 class="center center-text">Add new book</h3>
+                <h3 class="center center-text"><% if(edit) {%>Edit Product<%} else {%>Add Product<%} %></h3>
                 <div class="form-wrapper">
                     <form id="new-book-form" class="center" action="/admin/savebook" method="POST">
                         <div class="input-field">
                             <p class="input-label">Title</p>
-                           <input type="text" id="book_title" name="BookTitle">
+                           <input type="text" id="book_title" name="BookTitle" value="<% if(edit) {%><%= editBook.title %><%} else {%><%} %>" />
                         </div>
                         <div class="input-field">
                             <p class="input-label">Author</p>
-                            <input type="text" id="Author" name="Author">
+                            <input type="text" id="Author" name="Author" value="<% if(edit) {%><%= editBook.author %><%} else {%><%} %>">
                         </div>
                         <div class="input-field">
                             <p class="input-label">Year</p>
-                            <input type="text" id="Year" name="Year">
+                            <input type="text" id="Year" name="Year" value="<% if(edit) {%><%= editBook.year %><%} else {%><%} %>">
                         </div class="input-field">
                         <div class="input-field">
                             <p class="input-label">Caption</p>
-                            <input type="text" id="Caption" name="Caption">
+                            <textarea type="text" id="Caption" rows="5"  name="Caption" ><% if(edit) {%><%=editBook.caption %><%} else {%><%} %> </textarea>
                         </div class="input-field">
                         <div class="input-field">
                             <p class="input-label">Price</p>
-                            <input type="text" id="Price" name="Price">
+                            <input type="text" id="Price" name="Price" value="<% if(edit) {%><%= editBook.price %><%} else {%><%} %>">
                         </div class="input-field">
                         <div class="input-field">
                             <p class="input-label">Cover Image</p>
-                            <input type="text" id="Price" name="Cover">
+                            <input type="text" id="Price" name="Cover" value="<% if(edit) {%><%= editBook.img %><%} else {%><%} %>">
                         </div class="input-field">
                         <button id="register_book_button" class="btn center" type="submit" >Register</button>
                     </form>
@@ -68,8 +67,14 @@
                         </div>
                         <p class= book-title> <%= element.title %> <span>(<%= element.year %>)</span></p>
                         <p class="author"><%= element.author %></p>
-                        <span class='price'><%= element.price %></span>
-                        <button class="btn">Add to Cart</button>
+                        <span class='price'>$<%= element.price %></span>
+                        <form action="/admin/add-product/<%= element.id %>/?edit=true" method="POST">
+                            <button type="submit" class="btn">Edit</button>
+                        </form>                        
+                        <form action="/delete/$<%= element.id %>" method="POST">
+                            <button type="submit" class="btn">Delete</button>
+                        </form>
+
                     </div>
                     <% }) %>
                 </div>

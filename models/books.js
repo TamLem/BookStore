@@ -21,6 +21,7 @@ module.exports = class Book {
     this.caption = newBook.Caption;
     this.img = newBook.Cover;
     this.price = newBook.Price;
+    this.id = getID()
   }
 
   save() {
@@ -28,11 +29,19 @@ module.exports = class Book {
     console.log(this);
     storeData(booksData, "books.json");
   }
+  
+  edit() {
+
+    let index = booksData.findIndex((product) => product.id==id)
+    booksData[index] = this;
+
+  }
 
   static getAllBooks() {
     return booksData;
   }
 };
+
 
 const storeData = (data, path) => {
   try {
@@ -54,3 +63,15 @@ function readFile(path, encoding, cb) {
     }
 }
 
+function getID () {
+  if (booksData!=[]) {
+    let lastId = booksData[booksData.length-1].id;
+    return lastId + 1;
+  }
+  return 1;
+}
+
+function findById (id) {
+  let product = booksData.find((elem)=>elem.id==id);
+  return product;
+}

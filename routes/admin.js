@@ -8,7 +8,8 @@ const router = express.Router();
 
 router.post("/savebook", booksController.addBook);
 
-router.get('/add-product', booksController.getAddBook )
+router.use('/add-product/:productId', booksController.getAddBook )
 
+router.use('/delete/:productId', booksController.delBook)
 
 module.exports = router;

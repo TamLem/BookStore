@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" type='text/css' href="../details.css">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+
+        <%- include('includes/header') %>
+        
+        <div class="nav">
+            <ul>
+                <li id=""><a href="/">Home</a></li>
+                <li id=""><a href="">Books</a></li>
+                <li id=""><a href="">Cart</a></li>
+                <li id=""><a href="">About Us</a></li>
+                <li id=""><a href="">Contact</a></li>
+                <li id=""><a href="/admin/add-product">Admin Page</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cover-wrapper">
+                <img class="book-cover" src="<%= bookData.img %>" />
+
+            </div>
+
+            <div class="right-menu">
+                <div class="book-info">
+                    <h1><%= bookData.title %></h1>
+                    <p><%= bookData.author %></p>
+                    <div class="ratings-review">
+                        <span>rating</span>
+                        <span>review</span>
+                    </div>
+                </div>
+
+                <div class="order-form">
+                    <p>book format</p>
+                    <p>page number</p>
+                    <p><%= bookData.year %></p>
+                    <p><%= bookData.price %></p>
+                    <div class="input-field">
+                        <p class="input-label">Quantity</p>
+                        <input type="number" name="quantity" id="">
+
+                        <form action="/cart/<%= bookData.id %>" method="POST">
+                            <button class="btn" type="submit">Add to Cart</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="review-container">
+                <h3 class="review-title">Title</h3>
+                <p class="review">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt voluptates consequatur quia sequi et obcaecati omnis quo eligendi asperiores delectus neque veritatis necessitatibus assumenda ipsum dolor, atque aut magnam labore explicabo itaque cum possimus. Beatae odit cupiditate consequatur placeat, in dolorum magnam ratione distinctio debitis molestiae amet earum non ducimus obcaecati omnis esse porro error labore. Quia veniam eius asperiores molestias modi ut eligendi expedita odit aperiam, nostrum totam blanditiis quo fugiat aliquam iure tenetur voluptates aspernatur provident repellat, iste esse dolores consectetur illo dicta! Exercitationem odit officia, consequuntur impedit id accusamus rem, illo distinctio dolore iusto optio vel totam ipsa aut quos. Veniam repellat at architecto neque mollitia quo explicabo aliquam. Atque ducimus ipsa praesentium ipsum dolores a incidunt, minus quibusdam, consectetur sequi sit harum velit sed quis. Id, excepturi dolorem. Distinctio quae accusamus dolor, eligendi nostrum eaque. Laudantium molestias sed vel dolor optio sequi ad eligendi, recusandae saepe, voluptatum impedit. Laudantium alias magnam autem beatae, omnis neque assumenda reiciendis doloribus eligendi ut atque, quisquam, voluptates reprehenderit explicabo harum eum minus quia perspiciatis possimus fuga distinctio quis. Voluptatum, iusto inventore. Deleniti atque sequi numquam architecto vel a rerum fugiat excepturi! Facilis ratione nobis est magni, officia similique provident eveniet?</p>
+            </div>
+
+
+
+
+        </div>
+
+        
+
+        <div class="aside-left">
+
+        </div>
+        
+        <div class="footer">
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="../main.js"></script>
+</body>
+</html>

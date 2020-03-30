@@ -13,6 +13,7 @@ Features
 Todos
     - some styling
     - database
+    - add error 404 route
 
 
 ToFixs

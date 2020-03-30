@@ -9,8 +9,8 @@ body {
     margin-left: autO;
     margin-right:auto;
     background-color: rgb(238, 232, 232);
-    
 }
+
 
 .header {
     padding-top: 50px;
@@ -24,6 +24,14 @@ body {
 #quote {
     color:#D5D36A;
 }
+
+.container {
+    width: 70%;
+    margin-left: autO;
+    margin-right:auto;
+    background-color: rgb(238, 232, 232);
+}
+
 .nav {
     background-color: #233541;
     overflow: hidden;
@@ -51,38 +59,39 @@ body {
 }
 
 .main {
-    margin-top: 20px;
+    margin-top: 100px;
     height: auto;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-gap: 2em 2em;
+    justify-items: center;
+    grid-template-areas: "cover right"
+                         "review review";
 }
 
-.book-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-height: 700px;
-    margin: 30px;
-    border-top: gray 1px solid;
-    padding-top: 40px;
-    margin-top: 40px;
+.cover-wrapper {
+    grid-area: "cover";
+    border: solid 1px gray;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
     
 }
 
-.book-container {
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-    overflow: hidden;    
-    justify-content: center;
-    text-align: center;
-    padding: 0px;
+.right-menu {
+    grid-area: "right";
+    border: solid 1px gray;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
 }
-.cover-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 240px;
-    max-width: 156px;
-    margin-bottom: 10px;
+
+.review-container {
+    grid-area: "review";
+    border: solid 1px red;
 }
 
 .book-cover {
@@ -128,4 +137,25 @@ body {
     background-color: #00695c;
     color: white;
 }
-  
+
+input {
+    margin:10px;
+    margin-top: 0.5px;
+    min-width: 60%;
+    height: 2em;
+    border-radius: 10px;
+}
+
+.input-field {
+    display: block;
+    margin: 5px;
+}
+
+
+
+.input-label {
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    font-size: 0.8em;
+}
