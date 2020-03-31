@@ -4,9 +4,26 @@ const Book = require('../models/books')
 const booksData = Book.getAllBooks();
 
 exports.addBook = (req, res, next) => {
-    const newBook = new Book(req.body);
-    newBook.save();
-    res.render('index', {booksData: Book.getAllBooks()})
+    if(req.query.edit) {
+        const newBook = new Book(req.body);
+        let id = newBook.id;
+        newBook.update(id);
+        console.log('edit mode on')
+        res.render('admin/admin', {booksData: booksData, edit:false})
+    }
+    else {
+        const newBook = new Book(req.body);
+        newBook.save();
+        res.render('admin/admin', {booksData: booksData, edit:false})
+    }
+}
+
+exports.delBook = (req, res, next) => {
+    let id = req.params.productId;
+    Book.delBook(id, () => {
+       res.render('admin/admin', {booksData: booksData, edit:false})
+    });
+
 }
 
 exports.getAddBook = (req, res, next) => {
@@ -14,7 +31,6 @@ exports.getAddBook = (req, res, next) => {
     let editBook = findById(req.params.productId)
     
     if (editMode) {
-        console.log('edit mode on')
         res.render('admin/admin', {booksData: booksData, edit:true, editBook:editBook}  )
     } else {
         res.render('admin/admin', {booksData: booksData, edit:false})
@@ -32,9 +48,6 @@ exports.getProduct = (req, res, next) => {
 }
 
 
-exports.delBook = (req, res, next) => {
-    
-}
 
 function findById (id) {
     let product = booksData.find((elem)=>elem.id==id);

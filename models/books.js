@@ -21,7 +21,7 @@ module.exports = class Book {
     this.caption = newBook.Caption;
     this.img = newBook.Cover;
     this.price = newBook.Price;
-    this.id = getID()
+    this.id = (newBook.Id==null)? getID() : newBook.Id;
   }
 
   save() {
@@ -30,11 +30,18 @@ module.exports = class Book {
     storeData(booksData, "books.json");
   }
   
-  edit() {
-
-    let index = booksData.findIndex((product) => product.id==id)
+  static update(id) {
+    let index = booksData.findIndex((elem) => id==elem.id);
     booksData[index] = this;
+    storeData(booksData, "books.json");
+  }
 
+  static delBook (id, cb) {
+    console.log(id)
+    let index = booksData.findIndex((elem) => id == elem.id);
+    let UpdateBooks = booksData.filter((elem)=> id != elem.id);
+    storeData(UpdateBooks, "books.json");
+    cb(); 
   }
 
   static getAllBooks() {
