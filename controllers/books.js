@@ -20,10 +20,9 @@ exports.addBook = (req, res, next) => {
 
 exports.delBook = (req, res, next) => {
     let id = req.params.productId;
-    Book.delBook(id, () => {
-       res.render('admin/admin', {booksData: booksData, edit:false})
+    Book.delBook(id, (updateBooks)=>{
+        res.render('admin/admin', {booksData: updateBooks, edit:false});
     });
-
 }
 
 exports.getAddBook = (req, res, next) => {

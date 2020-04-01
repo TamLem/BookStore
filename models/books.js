@@ -21,7 +21,7 @@ module.exports = class Book {
     this.caption = newBook.Caption;
     this.img = newBook.Cover;
     this.price = newBook.Price;
-    this.id = (newBook.Id==null)? getID() : newBook.Id;
+    this.id = (newBook.Id !== "0")? +newBook.Id : getId() ;
   }
 
   save() {
@@ -30,7 +30,7 @@ module.exports = class Book {
     storeData(booksData, "books.json");
   }
   
-  static update(id) {
+   update(id) {
     let index = booksData.findIndex((elem) => id==elem.id);
     booksData[index] = this;
     storeData(booksData, "books.json");
@@ -39,9 +39,9 @@ module.exports = class Book {
   static delBook (id, cb) {
     console.log(id)
     let index = booksData.findIndex((elem) => id == elem.id);
-    let UpdateBooks = booksData.filter((elem)=> id != elem.id);
+    let UpdateBooks = booksData.filter((elem)=> id != elem.id); //works sync, well
     storeData(UpdateBooks, "books.json");
-    cb(); 
+    return cb(UpdateBooks); //passed updateBooks because the main array booksData is not initializing again
   }
 
   static getAllBooks() {
@@ -70,7 +70,7 @@ function readFile(path, encoding, cb) {
     }
 }
 
-function getID () {
+function getId () {
   if (booksData!=[]) {
     let lastId = booksData[booksData.length-1].id;
     return lastId + 1;

@@ -51,10 +51,10 @@
                         </div class="input-field">
                         <div class="input-field">
                             <p class="input-label">Cover Image</p>
-                            <input type="text" id="Price" name="Cover" value="<% if(edit) {%><%= editBook.img %><%} else {%><%} %>">
+                            <input type="text" id="cover" name="Cover" value="<% if(edit) {%><%= editBook.img %><%} else {%><%} %>">
                         </div class="input-field">
 
-                        <input type="hidden" id="id" name="Id" value="<% if (edit) {%> <%= editBook.id %><%} else {%><%=null%><%} %>">
+                        <input type="hidden" id="id" name="Id" value="<% if (edit) {%> <%= editBook.id %><%} else {%>0<%} %>">
 
                         <button id="register_book_button" class="btn center" type="submit" ><% if(edit) {%>Update Product<%} else {%>Add Product<%} %></button>
                     </form>
@@ -71,10 +71,10 @@
                         <p class= book-title> <%= element.title %> <span>(<%= element.year %>)</span></p>
                         <p class="author"><%= element.author %></p>
                         <span class='price'>$<%= element.price %></span>
-                        <form action="/admin/add-product/<%= element.id %>/?edit=true" method="POST">
+                        <form class="inline-block" action="/admin/add-product/<%= element.id %>/?edit=true" method="POST">
                             <button type="submit" class="btn">Edit</button>
                         </form>                        
-                        <form action="/admin/delete/<%= element.id %>" method="POST">
+                        <form class="inline-block" action="/admin/delete/<%= element.id %>" method="POST">
                             <button type="submit" class="btn">Delete</button>
                         </form>
 
