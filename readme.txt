@@ -18,7 +18,7 @@ Todos
     - add error 404 route
     - dynamic cart icon on front page
     - cart
-        - add database
+        - delete cart items
         - add cart management
     - alert on delete
 

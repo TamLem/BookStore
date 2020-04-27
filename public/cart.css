@@ -1,0 +1,65 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-item {
+    vertical-align: middle;
+    border: solid 1px rgb(126, 173, 116);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    height: 3rem;
+    margin: 10px;
+    padding: 20px;
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-areas: 
+    "cover title price qty delete" ;
+}
+
+.book-title {
+    grid-area: title;
+    justify-self: center;
+}
+
+.book-price {
+    grid-area: price;
+    text-align: center;
+    margin-left: 100px;
+    justify-self: start;
+}
+
+.input-field {
+    grid-area: qty;
+    display: inline;
+    margin-left: 30px;
+    font-size: 1rem;
+    justify-self: center;
+}
+
+.book-qty {
+    width: 50px;
+    border-radius: 5px;
+    
+}
+
+.delete-icon {
+    grid-area: delete;
+    color:#427d78;
+    margin-left: 20px;
+    justify-self: center;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.heading {
+    color:  #427d78
+}

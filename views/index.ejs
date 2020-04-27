@@ -26,14 +26,14 @@
 
         <div class="main">
             <div class="book-list">
-                <% booksData.forEach(element => { %>
+                <% if (booksData) {%><% booksData.forEach(element => { %>
                     <div class="book-container">
                             <div class="cover-wrapper">
                                 <a href="/products/<%= element.id %>">
                                     <img class="book-cover" src = <%= element.img %> />
                                 </a>
                             </div>
-                            <p class= book-title> <%= element.title %> <span>(<%= element.year %>)</span></p>
+                            <p class= book-title> <%= element.title %> <span><%= element.year %></span></p>
                             <p class="author"><%= element.author %></p>
                             <span class='price'>$<%= element.price %></span>
                             <form action="/cart/<%= element.id %>" method="POST">
@@ -41,7 +41,7 @@
                                 <button class="btn" type="submit">Add to Cart</button>
                             </form>
                     </div>
-                <% }) %>
+                <% }) %><%} %>
             </div>
 
         </div>

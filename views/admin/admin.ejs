@@ -31,30 +31,30 @@
                     <form id="new-book-form" class="center" action="/admin/<% if(edit) {%>savebook/?edit=true<%} else {%>savebook<%} %>" method="POST">
                         <div class="input-field">
                             <p class="input-label">Title</p>
-                           <input type="text" id="book_title" name="BookTitle" value="<% if(edit) {%><%= editBook.title %><%} else {%><%} %>" />
+                           <input type="text" id="title" name="title" value="<% if(edit) {%><%= product.title %><%} else {%><%} %>" />
                         </div>
                         <div class="input-field">
                             <p class="input-label">Author</p>
-                            <input type="text" id="Author" name="Author" value="<% if(edit) {%><%= editBook.author %><%} else {%><%} %>">
+                            <input type="text" id="author" name="author" value="<% if(edit) {%><%= product.author %><%} else {%><%} %>">
                         </div>
                         <div class="input-field">
                             <p class="input-label">Year</p>
-                            <input type="text" id="Year" name="Year" value="<% if(edit) {%><%= editBook.year %><%} else {%><%} %>">
+                            <input type="text" id="year" name="year" value="<% if(edit) {%><%= product.year %><%} else {%><%} %>">
                         </div class="input-field">
                         <div class="input-field">
                             <p class="input-label">Caption</p>
-                            <textarea type="text" id="Caption" rows="5"  name="Caption" ><% if(edit) {%><%=editBook.caption %><%} else {%><%} %> </textarea>
+                            <textarea type="text" id="caption" rows="5"  name="caption" ><% if(edit) {%><%=product.caption %><%} else {%><%} %> </textarea>
                         </div class="input-field">
                         <div class="input-field">
                             <p class="input-label">Price</p>
-                            <input type="text" id="Price" name="Price" value="<% if(edit) {%><%= editBook.price %><%} else {%><%} %>">
+                            <input type="text" id="price" name="price" value="<% if(edit) {%><%= product.price %><%} else {%><%} %>">
                         </div class="input-field">
                         <div class="input-field">
                             <p class="input-label">Cover Image</p>
-                            <input type="text" id="cover" name="Cover" value="<% if(edit) {%><%= editBook.img %><%} else {%><%} %>">
+                            <input type="text" id="cover" name="img" value="<% if(edit) {%><%= product.img %><%} else {%><%} %>">
                         </div class="input-field">
 
-                        <input type="hidden" id="id" name="Id" value="<% if (edit) {%> <%= editBook.id %><%} else {%>0<%} %>">
+                        <input type="hidden" id="id" name="id" value="<% if (edit) {%> <%= product.id %><%} else {%>0<%} %>">
 
                         <button id="register_book_button" class="btn center" type="submit" ><% if(edit) {%>Update Product<%} else {%>Add Product<%} %></button>
                     </form>
@@ -63,12 +63,12 @@
 
             
             <div class="book-list">
-                <% booksData.forEach(element => { %>
+                <% if (booksData) {%><% booksData.forEach(element => { %>
                     <div class="book-container">
                         <div class="cover-wrapper">
                             <img class="book-cover" src = <%= element.img %> </img>
                         </div>
-                        <p class= book-title> <%= element.title %> <span>(<%= element.year %>)</span></p>
+                        <p class= book-title> <%= element.title %> <span><%= element.year %></span></p>
                         <p class="author"><%= element.author %></p>
                         <span class='price'>$<%= element.price %></span>
                         <form class="inline-block" action="/admin/add-product/<%= element.id %>/?edit=true" method="POST">
@@ -79,7 +79,7 @@
                         </form>
 
                     </div>
-                    <% }) %>
+                    <% }) %><%} %>
                 </div>
                 
         </div>

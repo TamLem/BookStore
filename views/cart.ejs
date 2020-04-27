@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <link rel="stylesheet" type='text/css' href="../main.css">
+    <link rel="stylesheet" type='text/css' href="../cart.css">
     <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 <body>
@@ -15,16 +17,22 @@
         <%- include('includes/nav') %>
     
         <div class="main">
-            <h3>Your Cart</h3>
+            <h3 class="center heading">Your Cart</h3>
             <ul class="cart">
     
                 <% cart.forEach(element => { %>
-                    <li class="cart-element">
+                    <li class="cart-item">
                         <span class="book-title"> <%= element.title %></span>
                         <span class="book-price"> <%= element.price %></span>
+                        <div class="input-field">
+                            <span class="input-label"> Qty:</span>
+                            <input class="book-qty" type="number" value="<%= element.qty %>"> </span>
+                        </div>
+                        <a type="button" href="cart/delete/<%= element.id %>"class="delete-icon"><i class="material-icons">delete</i>
+                        </a>
                     </li>
                 <% }) %>
-                    <li>Total price <%= totalPrice %></li>
+                    <li class="cart-item">Total price <%= totalPrice %></li>
             </ul>
             
             

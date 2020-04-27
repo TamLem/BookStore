@@ -5,7 +5,9 @@ const cartController = require('../controllers/cart')
 
 const router = express.Router();
 
+router.get('/delete/:productId', cartController.deleteCartItem)
 router.use('/:productId', cartController.addProduct)
+
 
 //cartController.addProduct
 
