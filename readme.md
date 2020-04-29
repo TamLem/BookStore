@@ -11,9 +11,7 @@
     * post request handling on Admin page for adding new product
     * multiple routing middlewares
 
-
-
-Todos
+* Todos
     * some styling
     * database
     * add error 404 route
