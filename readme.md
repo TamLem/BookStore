@@ -12,8 +12,7 @@
     * multiple routing middlewares
 
 * Todos
-    * some styling
-    * database
+    * some more styling
     * add error 404 route
 
 
