@@ -22,11 +22,14 @@
     
                 <% cart.forEach(element => { %>
                     <li class="cart-item">
+                        <img class="book-cover" src="<%= element.img %>" />
                         <span class="book-title"> <%= element.title %></span>
-                        <span class="book-price"> <%= element.price %></span>
+                        <span class="book-price"> $<%= element.price %></span>
                         <div class="input-field">
                             <span class="input-label"> Qty:</span>
-                            <input class="book-qty" type="number" value="<%= element.qty %>"> </span>
+                            <form>
+                                <input class="book-qty" type="number" value="<%= element.qty %>">
+                            </form> </span>
                         </div>
                         <a type="button" href="cart/delete/<%= element.id %>"class="delete-icon"><i class="material-icons">delete</i>
                         </a>

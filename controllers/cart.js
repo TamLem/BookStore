@@ -39,7 +39,7 @@ exports.getCart = (req, res, next ) => {
             cartItems.forEach((elem) => {
                 totalPrice += Number(elem.price);
             })
-            res.render('cart', {cart:cartItems, totalPrice:totalPrice})
+            res.render('cart', {cart:cartItems, totalPrice:totalPrice})  //Todo- also provide qty from the cartitems table
          }
     )
 }

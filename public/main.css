@@ -35,19 +35,50 @@ body {
     
     list-style-type: none;
     overflow: hidden;
-    min-width: 60%;
-    float: center;
+    width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+   
 }
 
 .nav ul li {
     float: left;
-    padding-left: 5%;
+    padding: 2.5%;
+    text-align: center;
 }
 
 .nav ul li a {
     color: white;
     text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}
 
+.nav ul li a:active {
+    color: black;
+}
+
+.nav ul li:hover {
+    background:#5b7270;
+}
+
+
+@media only screen and (max-width: 920px) {
+    .nav ul li {
+        float:none;
+        background-color: #5b7270;
+        padding: 10px;
+        border-bottom: black 1px solid;
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav ul {
+        width: 100%;
+    }
 }
 
 .main {
