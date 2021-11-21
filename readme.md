@@ -1,6 +1,3 @@
-# Development Version Running Here
-## http://64.225.72.170/
-
 * Features
     * HTML Content
     * CSS Styling, with flex
